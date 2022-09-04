@@ -3,7 +3,7 @@ const {
 } = require('./posts');
 
 const {
-  homePageQuery, profilePageQuery, signInQuery, signUpQuery,
+  homePageQuery, profilePageQuery, signInQuery, signUpQuery, checkEmail,
 } = require('./users');
 
 module.exports = {
@@ -16,4 +16,5 @@ module.exports = {
   profilePageQuery,
   signInQuery,
   signUpQuery,
+  checkEmail,
 };
