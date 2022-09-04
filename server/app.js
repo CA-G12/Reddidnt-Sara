@@ -16,4 +16,8 @@ app.set('port', process.env.PORT || 3000);
 app.use(express.static(join(__dirname, '..', 'public')));
 app.use(router);
 
+app.use((err, req, res, next) => {
+  res.status(err.status || 500).json({ message: err.msg || 'something went wrong' });
+});
+
 module.exports = app;

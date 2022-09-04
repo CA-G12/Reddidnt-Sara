@@ -18,8 +18,7 @@ const signUpValidation = Joi.object({
     .alphanum()
     .required(),
   repeat_password: Joi
-    .ref('password')
-    .required(),
+    .ref('password'),
 });
 
 module.exports = signUpValidation;
