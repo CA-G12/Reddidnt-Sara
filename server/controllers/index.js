@@ -1,13 +1,16 @@
-const {
-  addComment, addPost, deletePost, likePost, unlikePost,
-} = require('./posts');
+const { addComment, deleteComment } = require('./comments');
 
-const {
-  homePage, profilePage, signIn, signUp,
-} = require('./users');
+const { likePost, unlikePost } = require('./likes');
+
+const { addPost, deletePost } = require('./posts');
+
+const { signIn, signUp, signOut } = require('./register');
+
+const { homePage, profilePage } = require('./users');
 
 module.exports = {
   addComment,
+  deleteComment,
   addPost,
   deletePost,
   likePost,
@@ -16,4 +19,5 @@ module.exports = {
   profilePage,
   signIn,
   signUp,
+  signOut,
 };
