@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
-const { signUpQuery, checkEmail } = require('../../database/queries');
+
+const { signUpQuery, signInQuery } = require('../../database/queries');
 const { signUpValidation } = require('../../validation');
 const { generateToken } = require('../../utils/authToken');
 const GenerateError = require('../../utils/GenerateError');
@@ -14,7 +15,7 @@ const signUp = (req, res, next) => {
     .catch((err) => {
       throw new GenerateError(400, err.details[0].message);
     })
-    .then((result) => checkEmail([email]))
+    .then((result) => signInQuery({ email }))
     .then((data) => {
       if (data.rows.length) throw new GenerateError(400, 'email already exists');
       else return bcrypt.hash(password, 10);
