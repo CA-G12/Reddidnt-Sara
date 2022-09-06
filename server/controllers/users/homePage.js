@@ -1,5 +1,9 @@
 const { homePageQuery } = require('../../database/queries');
 
-const homePage = () => {};
+const homePage = (req, res, next) => {
+  homePageQuery()
+    .then((data) => res.status(200).json({ data: data.rows }))
+    .catch((err) => next(err));
+};
 
 module.exports = homePage;
