@@ -4,9 +4,158 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Home</title>
 </head>
 <body>
-    <h1>I see you 👀</h1>
+    <header>
+        <img src="./assets/Reddit-Logo.png" alt="logo" class="logo">
+
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search a reddit">
+        </div>
+
+        <div class="log-in">
+            <button>Sign in</button>
+            <button>Sign up</button>
+            <div>
+                <i class="fa-regular fa-user"></i>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+        </div>
+
+        <div class="user">
+            <img src="./assets/reddit2.jpg" alt="">
+            <h3>Sara</h3>
+        </div>
+
+    </header>
+
+    <main>
+        <section class="popular">
+            <h3>popular posts</h3>
+            <div class="list">
+                <div>
+                    <i class="fa-solid fa-fire"></i>
+                    <h4>Hot</h4>
+                </div>
+                <div>
+                    <i class="fa-solid fa-certificate"></i>
+                    <h4>New</h4>
+                </div>
+                <div>
+                    <i class="fa-solid fa-arrow-up-short-wide"></i>
+                    <h4>Top</h4>
+                </div>
+            </div>
+        </section>
+
+        <section class="posts">
+
+            <div class="post">
+                <div class="user">
+                    <img src="./assets/reddit2.jpg" alt="profile image">
+                    <h3>Sara</h3>
+                    <h4>5/6/2022</h4>
+                </div>
+
+                <div class="content">
+                    <h2>this is the title of the first post</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur eos rerum quos et voluptas incidunt eveniet possimus necessitatibus sapiente. Alias illo at, ut sit quis libero vero suscipit porro soluta?
+                    Dicta illum nobis quidem temporibus, aspernatur provident similique vero, sint impedit cupiditate quod voluptatum enim nisi! Odit excepturi voluptate doloremque optio vero debitis animi illum perspiciatis tempora. Reprehenderit, natus esse?
+                    </p>
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" alt="image">
+                </div>
+
+                <div class="interactions">
+                    <div>
+                        <i class="fa-solid fa-heart"></i>
+                        <span>5 likes</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-comment"></i>
+                        <span>5 comments</span>
+                    </div>
+                </div>
+                <!-- post 2 -->
+            </div>
+
+                <div class="post">
+                <div class="user">
+                    <img src="./assets/reddit2.jpg" alt="profile image">
+                    <h3>Sara</h3>
+                    <h4>5/6/2022</h4>
+                </div>
+
+                <div class="content">
+                    <h2>this is the title of the first post</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur eos rerum quos et voluptas incidunt eveniet possimus necessitatibus sapiente. Alias illo at, ut sit quis libero vero suscipit porro soluta?
+                    Dicta illum nobis quidem temporibus, aspernatur provident similique vero, sint impedit cupiditate quod voluptatum enim nisi! Odit excepturi voluptate doloremque optio vero debitis animi illum perspiciatis tempora. Reprehenderit, natus esse?
+                    </p>
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" alt="image">
+                </div>
+
+                <div class="interactions">
+                    <div>
+                        <i class="fa-solid fa-heart"></i>
+                        <span>5 likes</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-comment"></i>
+                        <span>5 comments</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="forms">
+            <div class="form">
+                <i class="fa-solid fa-xmark"></i>
+                <img src="./assets/side-image.png" alt="side-image">
+
+                <div class="sign-in">
+                    <h2>Sign In</h2>
+                    <input type="email" placeholder="email">
+                    <input type="password" placeholder="password">
+                    <p class="message">invalid input</p>
+                    <button>Sign In</button>
+                    <p>new to reddit? <a>Sign up</a></p>
+                </div>
+
+                <div class="sign-up">
+                    <h2>Sign Up</h2>
+                    <input type="text" placeholder="nickname">
+                    <input type="email" placeholder="email">
+                    <input type="password" placeholder="password">
+                    <input type="password" placeholder="confirm password">
+                    <p class="message">invalid input</p>
+                    <button>Sign In</button>
+                    <p>already have an account? <a>Sign in</a></p>
+                </div>
+            </div>
+
+            <!-- <div class="form">
+                <i class="fa-solid fa-xmark"></i>
+                <img src="./assets/side-image.png" alt="side-image">
+                <div class="sign-in">
+                    <h2>Sign Up</h2>
+                    <input type="text" placeholder="nickname">
+                    <input type="email" placeholder="email">
+                    <input type="password" placeholder="password">
+                    <input type="password" placeholder="confirm password">
+                    <button>Sign In</button>
+                    <p>already have an account? <a>Sign in</a></p>
+                </div>
+            </div> -->
+        </section>
+    </main>
+
+    <script src="./js/index.js"></script>
+    <script src="./js/sigIn.js"></script>
+    <script src="./js/signUp.js"></script>
 </body>
 </html>
