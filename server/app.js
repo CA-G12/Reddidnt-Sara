@@ -15,7 +15,7 @@ app.disable('x-powered-by');
 
 app.set('port', process.env.PORT || 3000);
 
-// app.use(authenticate);
+app.use('/post', authenticate);
 
 app.use(express.static(join(__dirname, '..', 'public')));
 app.use(router);
