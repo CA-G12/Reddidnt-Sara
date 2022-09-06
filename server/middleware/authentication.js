@@ -6,6 +6,7 @@ const authenticate = (req, res, next) => {
 
   verifyToken(token)
     .then((decode) => {
+      req.data = decode;
       next();
     })
     .catch((err) => {

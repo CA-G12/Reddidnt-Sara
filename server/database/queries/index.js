@@ -1,6 +1,6 @@
 const { addCommentQuery, deleteCommentQuery } = require('./comments');
 
-const { likePostQuery, unlikePostQuery } = require('./likes');
+const { likePostQuery, unlikePostQuery, checkLikeQuery } = require('./likes');
 
 const { addPostQuery, deletePostQuery } = require('./posts');
 
@@ -15,6 +15,7 @@ module.exports = {
   deletePostQuery,
   likePostQuery,
   unlikePostQuery,
+  checkLikeQuery,
   homePageQuery,
   profilePageQuery,
   signInQuery,
