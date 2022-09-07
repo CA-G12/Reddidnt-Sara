@@ -144,6 +144,10 @@ main .add-posts .add > *{
     font-size: 1.2rem;
 }
 
+.add-posts .add input:focus::placeholder{
+    color: transparent;
+}
+
 .add-posts .add div {
     margin-bottom: 0;
     background-color: #d5d9da;
@@ -164,6 +168,10 @@ main .add-posts .add > *{
     border-top: 0;
     font-size: 1.1rem;
     padding: 0.5rem;
+}
+
+.add-posts .add textarea:focus::placeholder{
+    color: transparent;
 }
 
 .add-posts .add button{
@@ -279,6 +287,7 @@ main .user div img{
     width: 100px;
     border-radius: 50%;
     margin-bottom: 1rem;
+    border: solid var(--deep-blue) 1px;
 }
 
 main .user div label {
