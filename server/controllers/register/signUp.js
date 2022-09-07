@@ -22,8 +22,8 @@ const signUp = (req, res, next) => {
     })
     .then((hash) => signUpQuery({ name, email, hash }))
     .then((data) => {
-      const { id } = data.rows[0];
-      return generateToken({ id, name });
+      const { id, user_img } = data.rows[0];
+      return generateToken({ id, name, user_img });
     })
     .then((token) => {
       res.cookie('token', token, { httpOnly: true })

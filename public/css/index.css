@@ -90,7 +90,7 @@ header .search input{
     margin-left: 1.5rem;
 }
 
-header .user{
+header .user-info{
     height: 100%;
     display: flex;
     align-items: center;
@@ -99,11 +99,11 @@ header .user{
     display: none;
 }
 
-header .user:hover{
+header .user-info:hover{
     border: solid #b9bfc0 0.5px;
 }
 
-header .user img{
+header .user-info img{
     height: 80%;
     margin-right: 0.5rem;
 }

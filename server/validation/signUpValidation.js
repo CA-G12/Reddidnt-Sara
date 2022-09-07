@@ -9,8 +9,6 @@ const signUpValidation = Joi.object({
     .required(),
   email: Joi
     .string()
-    .min(8)
-    .max(100)
     .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })
     .required(),
   password: Joi
