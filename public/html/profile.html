@@ -4,11 +4,95 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>profile</title>
 </head>
 <body>
-    <h1>profile page</h1>
+     <header>
+        <img src="../assets/Reddit-Logo.png" alt="logo" class="logo">
 
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search a reddit">
+        </div>
+
+        <div class="user-info">
+            <img src="../assets/reddit2.jpg" alt="">
+            <h3>Sara</h3>
+        </div>
+
+    </header>
+
+    <main>
+        <section class="add-posts">
+            <div class="add">
+                <input type="text" placeholder="title">
+                <div>
+                    <label>
+                        <i class="fa-regular fa-image"></i>
+                        <!-- <input type="file" style="display: none;"> -->
+                    </label>
+                    <i class="fa-solid fa-video"></i>
+                </div>
+                <textarea name="" id="" cols="30" rows="10" placeholder="your post"></textarea>
+                <button>Post</button>
+            </div>
+
+        <div class="posts">
+                
+            <div class="post">
+                <div class="user">
+                    <img src="../assets/reddit2.jpg" alt="profile image">
+                    <h3>Sara</h3>
+                    <h4>5/6/2022</h4>
+                </div>
+
+                <div class="content">
+                    <h2>this is the title of the first post</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur eos rerum quos et voluptas incidunt eveniet possimus necessitatibus sapiente. Alias illo at, ut sit quis libero vero suscipit porro soluta?
+                    Dicta illum nobis quidem temporibus, aspernatur provident similique vero, sint impedit cupiditate quod voluptatum enim nisi! Odit excepturi voluptate doloremque optio vero debitis animi illum perspiciatis tempora. Reprehenderit, natus esse?
+                    </p>
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" alt="image">
+                </div>
+
+                <div class="interactions">
+                    <div>
+                        <i class="fa-solid fa-heart"></i>
+                        <span>5 likes</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-comment"></i>
+                        <span>5 comments</span>
+                    </div>
+                    <div>
+                        <button>Delete</button>
+                    </div>
+                </div>
+            
+            </div>
+
+        </div>
+
+        </section>
+        <section class="user">
+            <div>
+                <img src="../assets/reddit2.jpg" alt="avatar">
+
+                <h3>Sara Dahman</h3>
+                <h4>Joined on 22/5/2020</h4>
+
+                <label class="img-file">
+                    Change avatar
+                    <!-- <input type="file" style="display: none;"> -->
+                </label>
+
+                <!-- <label class="save-img">
+                    save
+                </label> -->
+            </div>
+        </section>
+    </main>
     <script src="../js/profile.js"></script>
 </body>
 </html>

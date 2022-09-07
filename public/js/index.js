@@ -42,7 +42,6 @@ const postsContainer = document.querySelector('.posts');
 const handleHomePage = (data) => {
   postsContainer.textContent = '';
   data.forEach((e, i) => {
-    console.log(e);
     const post = document.createElement('div');
     const userData = document.createElement('div');
     const content = document.createElement('div');
