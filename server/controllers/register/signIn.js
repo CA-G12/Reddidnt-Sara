@@ -20,6 +20,7 @@ const signIn = (req, res, next) => {
       else {
         payload.id = data.rows[0].id;
         payload.name = data.rows[0].name;
+        payload.user_img = data.rows[0].user_img;
         return bcrypt.compare(password, data.rows[0].password);
       }
     })
@@ -30,7 +31,7 @@ const signIn = (req, res, next) => {
     .then((token) => {
       res.cookie('token', token, { httpOnly: true })
         .status(200)
-        .json({ massage: 'welcome back' });
+        .json({ message: 'welcome back' });
     })
     .catch((err) => {
       next(err);
