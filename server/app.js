@@ -20,12 +20,20 @@ app.use('/post', authenticate);
 app.use(express.static(join(__dirname, '..', 'public')));
 app.use(router);
 
+app.get('/profile', authenticate, (req, res) => {
+  res.sendFile(join(__dirname, '..', 'public', 'html', 'profile.html'));
+});
+
 app.use((req, res, next) => {
   res.status(404).send('not found');
 });
 
 app.use((err, req, res, next) => {
-  res.status(err.status || 500).json({ message: err.msg || 'something went wrong', status: err.status || 500 });
+  if (err.status === 401) {
+    res.redirect('/');
+  } else {
+    res.status(err.status || 500).json({ message: err.msg || 'something went wrong', status: err.status || 500 });
+  }
 });
 
 module.exports = app;
