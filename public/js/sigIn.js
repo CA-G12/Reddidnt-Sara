@@ -17,7 +17,7 @@ const sendSignInData = (data) => {
     .then((res) => res.json())
     .then((res) => {
       if (res.status === 400) displaySignInMessage(res.message);
-      if (res.status === 500) window.location.href = '../html/serverError.html';
+      else if (res.status === 500) window.location.href = '../html/serverError.html';
       else {
         alert(res.message);
         window.location.reload();
