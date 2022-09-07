@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --deep-blue: #0079d3;
+    --bright-orange: #ff4500;
+    --gray-color: #dae0e6;
+    --light-gray: #f6f7f8;
+    --darker-gray: #8e9293;
+}
+
+body{
+    background-color: var(--gray-color);
+    position: relative;
+}
+
+header {
+    height: 3rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+}
+
+header .logo{
+ height: 100%;
+}
+
+header .search{
+    width: 50%;
+    position: relative;
+}
+
+header .search i{
+    position: absolute;
+    left: 1rem;
+    transform: translateY(50%);
+    color: var(--darker-gray);
+}
+
+header .search input{
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+    background-color: var(--light-gray);
+    outline: 0;
+    border: 0;
+}
+
+.log-in{
+    display: flex;
+    align-items: center;
+}
+
+.log-in > * {
+    margin-right: 0.7rem;
+}
+
+.log-in button{
+    padding: 0.4rem 2rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    border: 0;
+    cursor: pointer;
+}
+
+.log-in button:nth-child(1){
+    background-color: #fff;
+    border: solid var(--deep-blue) 1.5px;
+    color: var(--deep-blue);
+}
+
+.log-in button:nth-child(2){
+    background-color: var(--deep-blue);
+    border: solid var(--deep-blue) 1.5px;
+    color: #fff;
+}
+
+.log-in button:hover{
+    filter: brightness(1.2);
+}
+
+.log-in div{
+    color: var(--darker-gray);
+    font-size: 1.1rem;
+    margin-left: 1.5rem;
+}
+
+header .user-info{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+header .user-info:hover{
+    border: solid #b9bfc0 0.5px;
+}
+
+header .user-info img{
+    height: 80%;
+    margin-right: 0.5rem;
+}
+
+/* ===================== */
+
+main {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+main .add, .user div{
+    background-color: #fff;
+}
+
+main .add-posts {
+    width: 60%;
+}
+
+main .add-posts .add{
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+main .add-posts .add > *{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.add-posts .add input{
+    padding: 0.5rem 1rem;
+    border: solid var(--gray-color) 1px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+.add-posts .add div {
+    margin-bottom: 0;
+    background-color: #d5d9da;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.add-posts .add div i{
+    cursor: pointer;
+    margin-right: 0.5rem;
+    color: #4e5152;
+}
+
+.add-posts .add textarea{
+    border-right: solid var(--gray-color) 1.5px;
+    border-bottom: solid var(--gray-color) 1.5px;
+    border-left: solid var(--gray-color) 1.5px;
+    border-top: 0;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+}
+
+.add-posts .add button{
+    width: auto;
+    padding: 0.3rem 1rem;
+    border-radius: 10px;
+    background-color: var(--deep-blue);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.add-posts .add button:hover{
+    filter: brightness(1.2);
+}
+
+/* ==== start of posts section ===== */
+.posts .post{
+    background-color: #fff;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.posts .post:hover{
+    outline: solid var(--darker-gray) 1px;
+    cursor: pointer;
+}
+
+.posts .post .user{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.posts .post .user img{
+    height: 100%;
+}
+
+.posts .post .user > * {
+    margin-right: 0.5rem;
+}
+
+.posts .post .content{
+    margin-bottom: 0.5rem;
+}
+
+.posts .post .content > *{
+    margin-bottom: 0.5rem;
+}
+
+.posts .post .content img{
+    width: 100%;
+    height: 500px;
+}
+
+.posts .post .interactions{
+    color: #737778;
+    display: flex;
+    font-size: 1.2rem;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.posts .post .interactions div{
+    margin-right: 1rem;
+}
+
+.posts .post .interactions i {
+    margin-right: 0.5rem;
+}
+
+.posts .post .interactions div:nth-child(3){
+    margin-left: auto;
+}
+
+.posts .post .interactions div:nth-child(3) button {
+    width: auto;
+    padding: 0.3rem 1rem;
+    border-radius: 10px;
+    background-color: var(--deep-blue);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.posts .post .interactions div:nth-child(3) button:hover{
+    filter: brightness(1.2);
+}
+
+/* ==== end of posts section ==== */
+main .user{
+    width: 30%;
+}
+
+main .user div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+main .user div h4{
+    margin-bottom: 3rem;
+}
+
+main .user div img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+main .user div label {
+    cursor: pointer;
+    width: 100%;
+    padding: 0.3rem 1rem;
+    border-radius: 10px;
+    background-color: var(--deep-blue);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* ====== */
