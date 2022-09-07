@@ -38,7 +38,7 @@ switchSignUp.addEventListener('click', displaySignIn);
 const logButtons = document.querySelector('header .log-in');
 const userInfo = document.querySelector('header .user-info');
 
-const fetchHomapageData = () =>{
+const fetchHomepageData = () => {
   fetch('/users/homepage')
     .then((res) => res.json())
     .then((res) => {
@@ -51,6 +51,8 @@ const fetchHomapageData = () =>{
     });
 };
 
+fetchHomepageData();
 
-fetchHomapageData();
-
+userInfo.addEventListener('click', () => {
+  window.location.href = '/profile';
+});
