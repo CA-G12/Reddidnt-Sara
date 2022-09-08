@@ -99,6 +99,7 @@ const fetchHomepageData = () => {
   fetch('/users/homepage')
     .then((res) => res.json())
     .then((res) => {
+      console.log(res);
       if (res.user) {
         userInfo.style.display = 'flex';
         logButtons.style.display = 'none';
