@@ -1,6 +1,16 @@
 const connection = require('../../config/connection');
 
 const likePostQuery = ({ id, postId, userId }) => connection
-  .query('INSERT INTO likes(id, post_id, user_id) VALUES($1, $2, $3)', [id, postId, userId]);
+  .query(`
+    DO $$
+    BEGIN
+    IF (SELECT COUNT(*) FROM likes WHERE id = ${id}) > 0
+    THEN DELETE FROM likes WHERE id = ${id};
+    ELSE INSERT INTO likes(id, post_id, user_id) VALUES (${id}, ${postId}, ${userId});
+    END IF;
+    END $$;
+  `);
 
 module.exports = likePostQuery;
+
+// NOT RECOMMENDED, but the only way that worked
