@@ -66,7 +66,7 @@ const handleProfilePage = (data) => {
     postTitle.textContent = e.title;
     postContent.textContent = e.post;
     likesNum.textContent = `${e.likes} Likes`;
-    commentsNum.textContent = 'Comments';
+    commentsNum.textContent = `${e.comments} Comments`;
     delBtn.textContent = 'Delete';
 
     delBtn.addEventListener('click', deletePost);

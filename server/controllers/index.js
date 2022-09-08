@@ -1,4 +1,4 @@
-const { addComment, deleteComment } = require('./comments');
+const { addComment, deleteComment, getComments } = require('./comments');
 
 const { likePost, unlikePost } = require('./likes');
 
@@ -11,6 +11,7 @@ const { homePage, profilePage } = require('./users');
 module.exports = {
   addComment,
   deleteComment,
+  getComments,
   addPost,
   deletePost,
   likePost,
