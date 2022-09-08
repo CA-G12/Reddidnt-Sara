@@ -106,11 +106,13 @@ const postText = document.querySelector('.add textarea');
 const postBtn = document.querySelector('.add button');
 
 postTitle.addEventListener('input', () => {
-  if (postText.value !== '') postBtn.disabled = false;
+  if (postText.value !== '' && postTitle.value !== '') postBtn.disabled = false;
+  else postBtn.disabled = true;
 });
 
 postText.addEventListener('input', () => {
-  if (postTitle.value !== '') postBtn.disabled = false;
+  if (postTitle.value !== '' && postText.value !== '') postBtn.disabled = false;
+  else postBtn.disabled = true;
 });
 
 postBtn.addEventListener('click', () => {
