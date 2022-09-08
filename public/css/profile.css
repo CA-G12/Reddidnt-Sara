@@ -18,17 +18,18 @@ body{
 }
 
 header {
-    height: 3rem;
+    height: 3.5rem;
     background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 1rem 2rem;
     margin-bottom: 2rem;
 }
 
 header .logo{
- height: 100%;
+ width: 7rem;
+ height: 4rem;
 }
 
 header .search{
@@ -91,7 +92,6 @@ header .search input{
 }
 
 header .user-info{
-    height: 100%;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -103,7 +103,8 @@ header .user-info:hover{
 }
 
 header .user-info img{
-    height: 80%;
+    height: 2rem;
+    width: 2rem;
     margin-right: 0.5rem;
 }
 
@@ -227,7 +228,8 @@ main .add-posts .add > *{
     height: 30px;
     display: flex;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
 }
 
 .posts .post .user img{
@@ -236,6 +238,16 @@ main .add-posts .add > *{
 
 .posts .post .user > * {
     margin-right: 0.5rem;
+}
+
+.posts .post .user h3 {
+    font-size: 1.5rem;
+}
+
+.posts .post .user h4{
+    font-size: 0.8rem;
+    color: #737778;
+    margin-left: auto;
 }
 
 .posts .post .content{

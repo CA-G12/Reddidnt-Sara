@@ -22,7 +22,8 @@ const likePost = (e) => {
 };
 
 const handleProfilePage = (data) => {
-  postsContainer.textContent = '';
+  console.log(data);
+  if (data.length) postsContainer.textContent = '';
   data.forEach((e, i) => {
     const post = document.createElement('div');
     const userData = document.createElement('div');
@@ -61,7 +62,7 @@ const handleProfilePage = (data) => {
 
     userImg.src = e.user_img;
     userName.textContent = e.name;
-    date.textContent = '5/6/2022';
+    date.textContent = e.date.split('T')[0];
     postTitle.textContent = e.title;
     postContent.textContent = e.post;
     likesNum.textContent = `${e.likes} Likes`;
@@ -128,8 +129,11 @@ postBtn.addEventListener('click', () => {
   })
     .then((res) => res.json())
     .then((res) => {
-      alert(res.message);
+      // alert(res.message);
       fetchProfileData();
+      postText.value = '';
+      postTitle.value = '';
+      img.value = '';
     });
 });
 
