@@ -24,13 +24,6 @@ app.get('/profile', authenticate, (req, res) => {
   res.sendFile(join(__dirname, '..', 'public', 'html', 'profile.html'));
 });
 
-app.get('/get-signature', (req, res) => {
-  const timestamp = Math.round(new Date().getTime() / 1000);
-  const signature = cloudinary.utils.api_sign_request({
-
-  });
-});
-
 app.use((req, res, next) => {
   res.status(404).send('not found');
 });

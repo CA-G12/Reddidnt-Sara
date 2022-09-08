@@ -1,10 +1,29 @@
 const postsContainer = document.querySelector('.posts');
-
-const logButtons = document.querySelector('header .log-in');
 const userInfo = document.querySelector('header .user-info');
 
+const deletePost = (e) => {
+  const { id } = e.target.parentElement.parentElement.parentElement;
+  fetch(`/post/delete-post/${id}`, {
+    method: 'DELETE',
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      fetchProfileData();
+    });
+};
+
+const likePost = (e) => {
+  const { id } = e.target.parentElement.parentElement.parentElement;
+  fetch(`/post/like-post/${id}`)
+    .then((res) => res.json())
+    .then((res) => {
+      fetchProfileData();
+    });
+};
+
 const handleProfilePage = (data) => {
-  postsContainer.textContent = '';
+  console.log(data);
+  if (data.length) postsContainer.textContent = '';
   data.forEach((e, i) => {
     const post = document.createElement('div');
     const userData = document.createElement('div');
@@ -43,12 +62,15 @@ const handleProfilePage = (data) => {
 
     userImg.src = e.user_img;
     userName.textContent = e.name;
-    date.textContent = '5/6/2022';
+    date.textContent = e.date.split('T')[0];
     postTitle.textContent = e.title;
     postContent.textContent = e.post;
     likesNum.textContent = `${e.likes} Likes`;
     commentsNum.textContent = 'Comments';
     delBtn.textContent = 'Delete';
+
+    delBtn.addEventListener('click', deletePost);
+    likesCon.addEventListener('click', likePost);
 
     postsContainer.appendChild(post);
     post.append(userData, content, interactions);
@@ -107,8 +129,11 @@ postBtn.addEventListener('click', () => {
   })
     .then((res) => res.json())
     .then((res) => {
-      alert(res.message);
+      // alert(res.message);
       fetchProfileData();
+      postText.value = '';
+      postTitle.value = '';
+      img.value = '';
     });
 });
 
