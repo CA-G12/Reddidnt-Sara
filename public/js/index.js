@@ -76,7 +76,6 @@ const handleHomePage = (data) => {
     commentsIcon.classList = 'fa-solid fa-comment';
 
     userImg.src = e.user_img;
-    // postImg.src = e.post_img || '';
     userName.textContent = e.name;
     date.textContent = e.date.split('T')[0];
     postTitle.textContent = 'title will be added to db later';
@@ -105,8 +104,8 @@ const fetchHomepageData = () => {
         logButtons.style.display = 'none';
         userInfo.children[0].src = res.user.user_img;
         userInfo.children[1].textContent = res.user.name;
-        handleHomePage(res.data);
       }
+      handleHomePage(res.data);
     });
 };
 

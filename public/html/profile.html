@@ -27,16 +27,17 @@
     <main>
         <section class="add-posts">
             <div class="add">
-                <input type="text" placeholder="title">
+                <input type="text" placeholder="title" class="post-title">
                 <div>
                     <label>
                         <i class="fa-regular fa-image"></i>
-                        <!-- <input type="file" style="display: none;"> -->
+                        <input type="file" style="display: none;" class="choose-img">
                     </label>
                     <i class="fa-solid fa-video"></i>
+                    <input type="text" placeholder="Image url (optional)" class="img-url">
                 </div>
                 <textarea name="" id="" cols="30" rows="10" placeholder="your post"></textarea>
-                <button>Post</button>
+                <button disabled>Post</button>
             </div>
 
         <div class="posts">
@@ -82,14 +83,8 @@
                 <h3>Sara Dahman</h3>
                 <h4>Joined on 22/5/2020</h4>
 
-                <label class="img-file">
-                    Change avatar
-                    <!-- <input type="file" style="display: none;"> -->
-                </label>
-
-                <!-- <label class="save-img">
-                    save
-                </label> -->
+                <button> Update info </button>
+                <button class="sign-out"> Sign Out </button>
             </div>
         </section>
     </main>
