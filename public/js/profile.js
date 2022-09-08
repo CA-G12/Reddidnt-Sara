@@ -133,7 +133,7 @@ postBtn.addEventListener('click', () => {
       fetchProfileData();
       postText.value = '';
       postTitle.value = '';
-      img.value = '';
+      imgUrl.value = '';
     });
 });
 
