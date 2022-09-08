@@ -88,7 +88,6 @@ const fetchProfileData = () => {
   fetch('/users/profile')
     .then((res) => res.json())
     .then((res) => {
-      console.log(res);
       if (res.status === 500) window.location.href = '../html/serverError.html';
       else {
         userInfo.children[0].src = res.user.user_img;
