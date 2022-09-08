@@ -2,9 +2,10 @@ const { addPostQuery } = require('../../database/queries');
 
 const addPost = (req, res, next) => {
   const { id } = req.data;
-  const { post, img } = req.body;
+  const { title, post, img } = req.body;
+  console.log(req.body);
 
-  addPostQuery({ post, img, id })
+  addPostQuery({ title, post, img, id })
     .then(() => {
       res.status(200).json({ message: 'Post added successfully' });
     })

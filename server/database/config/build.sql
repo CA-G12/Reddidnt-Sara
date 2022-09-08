@@ -7,11 +7,13 @@ CREATE TABLE users(
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL,
+    date DATE DEFAULT now(),
     user_img  VARCHAR(500) DEFAULT 'https://bit.ly/3RagrYZ'
 );
 
 CREATE TABLE posts(
     id SERIAL PRIMARY KEY,
+    title VARCHAR(500),
     post TEXT NOT NULL,
     date DATE DEFAULT now(),
     post_img VARCHAR(500) DEFAULT null,

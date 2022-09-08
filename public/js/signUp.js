@@ -28,7 +28,7 @@ const sendSignUpData = (data) => {
       if (res.status === 400) displayMessage(res.message);
       else if (res.status === 500) window.location.href = '../html/serverError.html';
       else {
-        alert(res.message);
+        // alert(res.message);
         window.location.reload();
       }
     });
