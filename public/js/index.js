@@ -40,6 +40,17 @@ const userInfo = document.querySelector('header .user-info');
 const postsContainer = document.querySelector('.posts');
 let isLogged;
 
+const deletePost = (e) => {
+  const { id } = e.target.parentElement.parentElement.parentElement;
+  fetch(`/post/delete-post/${id}`, {
+    method: 'DELETE',
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      fetchHomepageData();
+    });
+};
+
 const likePost = (e) => {
   const { id } = e.target.parentElement.parentElement.parentElement;
   if (!isLogged) formsSection.style.display = 'flex';
@@ -52,7 +63,8 @@ const likePost = (e) => {
   }
 };
 
-const handleHomePage = (data) => {
+const handleHomePage = (data, id) => {
+  // console.log(user, data);
   postsContainer.textContent = '';
   data.forEach((e, i) => {
     const post = document.createElement('div');
@@ -61,6 +73,8 @@ const handleHomePage = (data) => {
     const interactions = document.createElement('div');
     const likesCon = document.createElement('div');
     const commentsCon = document.createElement('div');
+    const delCont = document.createElement('div');
+
 
     const userImg = document.createElement('img');
     let postImg = null;
@@ -79,6 +93,7 @@ const handleHomePage = (data) => {
 
     const likesNum = document.createElement('span');
     const commentsNum = document.createElement('span');
+    const delBtn = document.createElement('button');
 
     post.id = e.id;
     post.classList = 'post';
@@ -95,6 +110,9 @@ const handleHomePage = (data) => {
     postContent.textContent = e.post;
     likesNum.textContent = `${e.likes} Likes`;
     commentsNum.textContent = 'Comments';
+    delBtn.textContent = 'Delete';
+
+    delBtn.addEventListener('click', deletePost);
 
     likesCon.addEventListener('click', likePost);
 
@@ -106,7 +124,10 @@ const handleHomePage = (data) => {
     } else { content.append(postTitle, postContent); }
     likesCon.append(likesIcon, likesNum);
     commentsCon.append(commentsIcon, commentsNum);
-    interactions.append(likesCon, commentsCon);
+    delCont.appendChild(delBtn);
+
+    if (e.user_id === id) interactions.append(likesCon, commentsCon, delCont);
+    else interactions.append(likesCon, commentsCon);
   });
 };
 
@@ -121,7 +142,7 @@ const fetchHomepageData = () => {
         userInfo.children[0].src = res.user.user_img;
         userInfo.children[1].textContent = res.user.name;
       }
-      handleHomePage(res.data);
+      handleHomePage(res.data, res.user ? res.user.id : res.user);
     });
 };
 

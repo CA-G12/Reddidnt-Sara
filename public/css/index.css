@@ -220,6 +220,25 @@ main .popular .list div > *{
     margin-right: 0.5rem;
 }
 
+.posts .post .interactions div:nth-child(3){
+    margin-left: auto;
+}
+
+.posts .post .interactions div:nth-child(3) button {
+    width: auto;
+    padding: 0.3rem 1rem;
+    border-radius: 10px;
+    background-color: var(--deep-blue);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.posts .post .interactions div:nth-child(3) button:hover{
+    filter: brightness(1.2);
+}
+
 /* ======= */
 .forms {
     display: flex;
