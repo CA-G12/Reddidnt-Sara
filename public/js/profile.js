@@ -1,7 +1,25 @@
 const postsContainer = document.querySelector('.posts');
-
-const logButtons = document.querySelector('header .log-in');
 const userInfo = document.querySelector('header .user-info');
+
+const deletePost = (e) => {
+  const { id } = e.target.parentElement.parentElement.parentElement;
+  fetch(`/post/delete-post/${id}`, {
+    method: 'DELETE',
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      fetchProfileData();
+    });
+};
+
+const likePost = (e) => {
+  const { id } = e.target.parentElement.parentElement.parentElement;
+  fetch(`/post/like-post/${id}`)
+    .then((res) => res.json())
+    .then((res) => {
+      fetchProfileData();
+    });
+};
 
 const handleProfilePage = (data) => {
   postsContainer.textContent = '';
@@ -50,6 +68,9 @@ const handleProfilePage = (data) => {
     commentsNum.textContent = 'Comments';
     delBtn.textContent = 'Delete';
 
+    delBtn.addEventListener('click', deletePost);
+    likesCon.addEventListener('click', likePost);
+
     postsContainer.appendChild(post);
     post.append(userData, content, interactions);
     userData.append(userImg, userName, date);
@@ -67,6 +88,7 @@ const fetchProfileData = () => {
   fetch('/users/profile')
     .then((res) => res.json())
     .then((res) => {
+      console.log(res);
       if (res.status === 500) window.location.href = '../html/serverError.html';
       else {
         userInfo.children[0].src = res.user.user_img;

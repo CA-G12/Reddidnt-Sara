@@ -38,6 +38,20 @@ switchSignUp.addEventListener('click', displaySignIn);
 const logButtons = document.querySelector('header .log-in');
 const userInfo = document.querySelector('header .user-info');
 const postsContainer = document.querySelector('.posts');
+let isLogged;
+
+const likePost = (e) => {
+  const { id } = e.target.parentElement.parentElement.parentElement;
+  fetch(`/post/like-post/${id}`)
+    .then((res) => res)
+    .then((res) => {
+      if (!isLogged) {
+        formsSection.style.display = 'flex';
+      } else {
+        fetchHomepageData();
+      }
+    });
+};
 
 const handleHomePage = (data) => {
   postsContainer.textContent = '';
@@ -78,10 +92,12 @@ const handleHomePage = (data) => {
     userImg.src = e.user_img;
     userName.textContent = e.name;
     date.textContent = e.date.split('T')[0];
-    postTitle.textContent = 'title will be added to db later';
+    postTitle.textContent = e.title;
     postContent.textContent = e.post;
     likesNum.textContent = `${e.likes} Likes`;
     commentsNum.textContent = 'Comments';
+
+    likesCon.addEventListener('click', likePost);
 
     postsContainer.appendChild(post);
     post.append(userData, content, interactions);
@@ -99,6 +115,7 @@ const fetchHomepageData = () => {
   fetch('/users/homepage')
     .then((res) => res.json())
     .then((res) => {
+      isLogged = res.isLogged;
       if (res.user) {
         userInfo.style.display = 'flex';
         logButtons.style.display = 'none';
