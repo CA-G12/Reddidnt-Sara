@@ -15,7 +15,12 @@
 body{
     background-color: var(--gray-color);
     position: relative;
+    height: 100vh;
 }
+
+/* main{
+    position: relative;
+} */
 
 header {
     height: 3.5rem;
@@ -149,19 +154,19 @@ main .popular .list div > *{
 
 /* ================ */
 
-.posts .post{
+ .post{
     background-color: #fff;
     padding: 2rem;
     margin-bottom: 1rem;
     border-radius: 5px;
 }
 
-.posts .post:hover{
+ .post:hover{
     outline: solid var(--darker-gray) 1px;
     cursor: pointer;
 }
 
-.posts .post .user{
+ .post .user{
     height: 30px;
     display: flex;
     align-items: center;
@@ -169,62 +174,62 @@ main .popular .list div > *{
     width: 100%;
 }
 
-.posts .post .user img{
+ .post .user img{
     height: 100%;
 }
 
-.posts .post .user > * {
+ .post .user > * {
     margin-right: 0.5rem;
 }
 
-.posts .post .user h3 {
+ .post .user h3 {
     font-size: 1.5rem;
 }
 
-.posts .post .user h4{
+ .post .user h4{
     font-size: 0.8rem;
     color: #737778;
     margin-left: auto;
 }
 
-.posts .post .content{
+ .post .content{
     margin-bottom: 1rem;
 }
 
-.posts .post .content > *{
+ .post .content > *{
     margin-bottom: 1rem;
 }
 
-.posts .post .content p {
+ .post .content p {
     font-size: 1.2rem;
     color: #636667;
     margin-bottom: 2rem;
 }
 
-.posts .post .content img{
+.post .content img{
     width: 100%;
     height: 500px;
 }
 
-.posts .post .interactions{
+.post .interactions{
     color: #737778;
     display: flex;
     font-size: 1.2rem;
 }
 
-.posts .post .interactions div{
+.post .interactions div{
     margin-right: 1rem;
 }
 
-.posts .post .interactions i {
+.post .interactions i {
     margin-right: 0.5rem;
 }
 
-.posts .post .interactions div:nth-child(3){
+.post .interactions div:nth-child(3){
     margin-left: auto;
 }
 
-.posts .post .interactions div:nth-child(3) button {
+.post .interactions div:nth-child(3) button {
     width: auto;
     padding: 0.3rem 1rem;
     border-radius: 10px;
@@ -235,7 +240,7 @@ main .popular .list div > *{
     font-size: 1.1rem;
 }
 
-.posts .post .interactions div:nth-child(3) button:hover{
+.post .interactions div:nth-child(3) button:hover{
     filter: brightness(1.2);
 }
 
@@ -318,4 +323,79 @@ main .popular .list div > *{
 
 .forms .sign-up{
     display: none;
+}
+
+/* ============== */
+
+.display-comments {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.display-comments .close{
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    font-size: 1.3rem;
+    width: 100%;
+    justify-content: flex-end;
+    padding: 0.3rem 1rem;
+    cursor: pointer;
+}
+
+.display-comments .content-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #636667;
+    padding: 1rem 5rem;
+}
+
+.display-comments .content-div .user-post{
+    width: 70%;
+    padding: 0 3rem;
+}
+
+.content-div .user{
+    width: 25%;
+    background-color: #fff;
+}
+
+.content-div .user div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.content-div .user div h4{
+    margin-bottom: 3rem;
+}
+
+.content-div .user div img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: solid var(--deep-blue) 1px;
+}
+
+.content-div .user div button {
+    cursor: pointer;
+    width: 100%;
+    padding: 0.3rem 1rem;
+    border-radius: 10px;
+    background-color: var(--deep-blue);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
 }
