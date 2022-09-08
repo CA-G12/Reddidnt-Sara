@@ -42,15 +42,14 @@ let isLogged;
 
 const likePost = (e) => {
   const { id } = e.target.parentElement.parentElement.parentElement;
-  fetch(`/post/like-post/${id}`)
-    .then((res) => res)
-    .then((res) => {
-      if (!isLogged) {
-        formsSection.style.display = 'flex';
-      } else {
+  if (!isLogged) formsSection.style.display = 'flex';
+  else {
+    fetch(`/post/like-post/${id}`)
+      .then((res) => res)
+      .then((res) => {
         fetchHomepageData();
-      }
-    });
+      });
+  }
 };
 
 const handleHomePage = (data) => {
