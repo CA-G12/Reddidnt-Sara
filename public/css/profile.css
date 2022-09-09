@@ -12,6 +12,10 @@
     --darker-gray: #8e9293;
 }
 
+html{
+    font-size: 14px;
+}
+
 body{
     background-color: var(--gray-color);
     position: relative;
@@ -283,6 +287,10 @@ main .add-posts .add > *{
 
 .posts .post .interactions i {
     margin-right: 0.5rem;
+}
+
+.post .interactions .liked{
+    color: var(--bright-orange);
 }
 
 .posts .post .interactions div:nth-child(3){

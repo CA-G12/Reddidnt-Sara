@@ -17,9 +17,9 @@ body{
     height: 100vh;
 }
 
-/* main{
-    position: relative;
-} */
+html{
+    font-size: 14px;
+}
 
 header {
     height: 3.5rem;
@@ -101,6 +101,7 @@ header .user-info{
     cursor: pointer;
     padding: 0.5rem;
     display: none;
+    font-size: 1.2rem;
 }
 
 header .user-info:hover{
@@ -116,8 +117,9 @@ header .user-info img{
 /* ==================== */
 
 main {
-    width: 50%;
+    width: 45%;
     margin: 0 auto;
+    padding: 0 0 3rem;
 }
 
 main .popular h3{
@@ -153,19 +155,19 @@ main .popular .list div > *{
 
 /* ================ */
 
- .post{
+.post{
     background-color: #fff;
     padding: 2rem;
     margin-bottom: 1rem;
     border-radius: 5px;
 }
 
- .post:hover{
+.post:hover{
     outline: solid var(--darker-gray) 1px;
     cursor: pointer;
 }
 
- .post .user{
+.post .user{
     height: 30px;
     display: flex;
     align-items: center;
@@ -173,15 +175,15 @@ main .popular .list div > *{
     width: 100%;
 }
 
- .post .user img{
+.post .user img{
     height: 100%;
 }
 
- .post .user > * {
+.post .user > * {
     margin-right: 0.5rem;
 }
 
- .post .user h3 {
+.post .user h3 {
     font-size: 1.5rem;
 }
 
@@ -207,7 +209,6 @@ main .popular .list div > *{
 
 .post .content img{
     width: 100%;
-    height: 500px;
 }
 
 .post .interactions{
@@ -222,6 +223,10 @@ main .popular .list div > *{
 
 .post .interactions i {
     margin-right: 0.5rem;
+}
+
+.post .interactions .liked{
+    color: var(--bright-orange);
 }
 
 .post .interactions div:nth-child(3){
@@ -353,16 +358,12 @@ button:hover {
 }
 
 .display-comments .content-div{
-    /* display: flex;
-    justify-content: space-between;
-    align-items: flex-start; */
     background-color: #636667;
     padding: 1rem 6rem;
-    height: 100vh;
 }
 
 .display-comments .content-div .user-post{
-    width: 70%;
+    width: 60%;
     padding: 0 3rem;
     margin: 0 auto;
 }

@@ -219,7 +219,11 @@ const handleHomePage = (data, id) => {
     delBtn.textContent = 'Delete';
 
     delBtn.addEventListener('click', deletePost);
-    likesCon.addEventListener('click', likePost);
+    likesIcon.addEventListener('click', likePost);
+
+    if (e.liked_id.includes(loggedUser)) {
+      likesIcon.classList.add('liked');
+    }
 
     commentsCon.addEventListener('click', () => {
       commentContainer.style.display = 'block';
@@ -246,6 +250,7 @@ const fetchHomepageData = () => {
   fetch('/users/homepage')
     .then((res) => res.json())
     .then((res) => {
+      // console.log(res);
       isLogged = res.isLogged;
       if (res.user) {
         loggedUser = res.user.id;
