@@ -57,6 +57,7 @@ addCommentBtn.addEventListener('click', (e) => {
   })
     .then((res) => res.json())
     .then((res) =>{
+      textarea.value = ''
       fetchComments(id);
     });
 });
