@@ -86,13 +86,14 @@ const handlePost = (user) => {
 
   postTitle.textContent = user.title;
   postText.textContent = user.post;
-  postImg.src = user.post_img;
 
   likes.textContent = `${user.likes} Likes`;
   comments.textContent = `${user.comments} Comments`;
 
-  if (user.post_img) postImg.style.display = 'inline';
-  else postImg.style.display = 'none';
+  if (user.post_img) {
+    postImg.style.display = 'inline';
+    postImg.src = user.post_img;
+  } else postImg.style.display = 'none';
 
   addCommentBtn.id = user.id;
 };
@@ -100,6 +101,21 @@ const handlePost = (user) => {
 closeComments.addEventListener('click', () => {
   commentContainer.style.display = 'none';
 });
+
+/// delete a comment
+
+const deleteComment = (e) => {
+  const postId = addCommentBtn.id;
+  const { id } = e.target.parentElement;
+  fetch(`/post/delete-comment/${id}`, {
+    method: 'DELETE',
+  })
+    .then((res) => res.json())
+    .then((res) =>{
+      alert(res.message);
+      fetchComments(postId);
+    });
+};
 
 // displaying comments
 const commentsSection = document.querySelector('.all-comments');
@@ -123,6 +139,8 @@ const handleComments = (comments) => {
     userImg.src = e.user_img;
     content.textContent = e.comment;
     deleteBtn.textContent = 'Delete';
+
+    deleteBtn.addEventListener('click', deleteComment)
 
     user.append(userImg, userName);
     if (loggedUser === e.user_id) comment.append(user, content, deleteBtn);
@@ -154,6 +172,7 @@ const deletePost = (e) => {
   })
     .then((res) => res.json())
     .then((res) => {
+      alert(res.message);
       fetchHomepageData();
     });
 };
@@ -172,7 +191,7 @@ const likePost = (e) => {
 
 const handleHomePage = (data, id) => {
   postsContainer.textContent = '';
-  data.forEach((e, i) => {
+  data.forEach((e) => {
     const post = document.createElement('div');
     const userData = document.createElement('div');
     const content = document.createElement('div');
@@ -180,7 +199,6 @@ const handleHomePage = (data, id) => {
     const likesCon = document.createElement('div');
     const commentsCon = document.createElement('div');
     const delCont = document.createElement('div');
-
 
     const userImg = document.createElement('img');
     let postImg = null;
@@ -250,7 +268,6 @@ const fetchHomepageData = () => {
   fetch('/users/homepage')
     .then((res) => res.json())
     .then((res) => {
-      // console.log(res);
       isLogged = res.isLogged;
       if (res.user) {
         loggedUser = res.user.id;
