@@ -14,7 +14,6 @@
 
 body{
     background-color: var(--gray-color);
-    position: relative;
     height: 100vh;
 }
 
@@ -186,21 +185,21 @@ main .popular .list div > *{
     font-size: 1.5rem;
 }
 
- .post .user h4{
+.post .user h4{
     font-size: 0.8rem;
     color: #737778;
     margin-left: auto;
 }
 
- .post .content{
+.post .content{
     margin-bottom: 1rem;
 }
 
- .post .content > *{
+.post .content > *{
     margin-bottom: 1rem;
 }
 
- .post .content p {
+.post .content p {
     font-size: 1.2rem;
     color: #636667;
     margin-bottom: 2rem;
@@ -240,7 +239,7 @@ main .popular .list div > *{
     font-size: 1.1rem;
 }
 
-.post .interactions div:nth-child(3) button:hover{
+button:hover {
     filter: brightness(1.2);
 }
 
@@ -291,7 +290,7 @@ main .popular .list div > *{
     margin-bottom: 2rem;
 }
 
-.forms .form div input, button, .message{
+.forms .form div input, .form button, .form .message{
     width: 50%;
     margin-bottom: 0.7rem;
     padding: 0.5rem 1rem;
@@ -328,13 +327,16 @@ main .popular .list div > *{
 /* ============== */
 
 .display-comments {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     width: 100%;
     height: 100%;
+    padding: 0 4rem;
+    overflow-y: auto;
+    background-color: #636667;
+    display: none;
 }
 
 .display-comments .close{
@@ -346,27 +348,31 @@ main .popular .list div > *{
     justify-content: flex-end;
     padding: 0.3rem 1rem;
     cursor: pointer;
+    position: sticky;
+    top: 0;
 }
 
 .display-comments .content-div{
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-start; */
     background-color: #636667;
-    padding: 1rem 5rem;
+    padding: 1rem 6rem;
+    height: 100vh;
 }
 
 .display-comments .content-div .user-post{
     width: 70%;
     padding: 0 3rem;
+    margin: 0 auto;
 }
 
-.content-div .user{
+.content-div .user-div{
     width: 25%;
     background-color: #fff;
 }
 
-.content-div .user div{
+.content-div .user-div div{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -374,11 +380,11 @@ main .popular .list div > *{
     border-radius: 10px;
 }
 
-.content-div .user div h4{
+.content-div .user-div div h4{
     margin-bottom: 3rem;
 }
 
-.content-div .user div img{
+.content-div .user-div div img{
     height: 100px;
     width: 100px;
     border-radius: 50%;
@@ -386,9 +392,42 @@ main .popular .list div > *{
     border: solid var(--deep-blue) 1px;
 }
 
-.content-div .user div button {
-    cursor: pointer;
+/* ======== write comments ========= */
+
+.write-comment{
     width: 100%;
+    background-color: #fff;
+    padding: 1rem 3rem;
+    border-radius: 5px;
+}
+
+.write-comment textarea{
+    border-right: solid var(--gray-color) 1.5px;
+    border-bottom: 0;
+    border-left: solid var(--gray-color) 1.5px;
+    border-top: solid var(--gray-color) 1.5px;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    width: 100%;
+    color: #636667;
+    font-weight: 300;
+}
+
+.write-comment textarea:focus::placeholder{
+    color: transparent;
+}
+
+.write-comment div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #d5d9da;
+}
+
+.write-comment div button{
+    width: auto;
+    margin-left: auto;
     padding: 0.3rem 1rem;
     border-radius: 10px;
     background-color: var(--deep-blue);
@@ -396,6 +435,66 @@ main .popular .list div > *{
     border: none;
     cursor: pointer;
     font-size: 1.1rem;
-    text-align: center;
-    margin-bottom: 0.5rem;
+}
+
+.write-comment div button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  pointer-events: none;
+}
+
+
+.write-comment div i {
+    color: #636667;
+    margin-left: 0.5rem;
+    font-size: 1.1rem;
+}
+
+
+/* ===== comments ======= */
+
+.all-comments {
+    background-color: #fff;
+    padding: 1rem 3rem;
+    border-radius: 5px;
+}
+
+.one-comment{
+    margin-bottom: 1rem;
+    border: solid #c6c9c9 1px;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: right;
+}
+
+.one-comment div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.one-comment div img {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5rem;
+}
+
+.one-comment p {
+    color: #575959;
+    padding: 0 0.5rem;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.one-comment button {
+    width: auto;
+    margin-left: auto;
+    padding: 0.3rem 1rem;
+    border-radius: 10px;
+    background-color: var(--deep-blue);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
 }
