@@ -268,7 +268,6 @@ const fetchHomepageData = () => {
   fetch('/users/homepage')
     .then((res) => res.json())
     .then((res) => {
-      // console.log(res);
       isLogged = res.isLogged;
       if (res.user) {
         loggedUser = res.user.id;
