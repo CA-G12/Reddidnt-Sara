@@ -22,7 +22,6 @@ const likePost = (e) => {
 };
 
 const handleProfilePage = (data) => {
-  console.log(data);
   if (data.length) postsContainer.textContent = '';
   data.forEach((e, i) => {
     const post = document.createElement('div');
