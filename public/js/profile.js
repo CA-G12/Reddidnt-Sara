@@ -8,6 +8,7 @@ const deletePost = (e) => {
   })
     .then((res) => res.json())
     .then((res) => {
+      alert(res.message);
       fetchProfileData();
     });
 };

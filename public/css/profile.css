@@ -56,50 +56,12 @@ header .search input{
     border: 0;
 }
 
-.log-in{
-    display: flex;
-    align-items: center;
-}
-
-.log-in > * {
-    margin-right: 0.7rem;
-}
-
-.log-in button{
-    padding: 0.4rem 2rem;
-    border-radius: 20px;
-    font-size: 1rem;
-    border: 0;
-    cursor: pointer;
-}
-
-.log-in button:nth-child(1){
-    background-color: #fff;
-    border: solid var(--deep-blue) 1.5px;
-    color: var(--deep-blue);
-}
-
-.log-in button:nth-child(2){
-    background-color: var(--deep-blue);
-    border: solid var(--deep-blue) 1.5px;
-    color: #fff;
-}
-
-.log-in button:hover{
-    filter: brightness(1.2);
-}
-
-.log-in div{
-    color: var(--darker-gray);
-    font-size: 1.1rem;
-    margin-left: 1.5rem;
-}
-
 header .user-info{
     display: flex;
     align-items: center;
     cursor: pointer;
     padding: 0.5rem;
+    font-size: 1.2rem;
 }
 
 header .user-info:hover{
