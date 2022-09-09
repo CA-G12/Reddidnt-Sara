@@ -21,7 +21,7 @@ const likePost = (e) => {
     });
 };
 
-const handleProfilePage = (data) => {
+const handleProfilePage = (data, id) => {
   if (data.length) postsContainer.textContent = '';
   data.forEach((e, i) => {
     const post = document.createElement('div');
@@ -65,11 +65,15 @@ const handleProfilePage = (data) => {
     postTitle.textContent = e.title;
     postContent.textContent = e.post;
     likesNum.textContent = `${e.likes} Likes`;
-    commentsNum.textContent = `${e.comments} Comments`;
+    commentsNum.textContent = 'Click to see comments';
     delBtn.textContent = 'Delete';
 
     delBtn.addEventListener('click', deletePost);
     likesCon.addEventListener('click', likePost);
+
+    if (e.liked_id.includes(id)) {
+      likesIcon.classList.add('liked');
+    }
 
     postsContainer.appendChild(post);
     post.append(userData, content, interactions);
@@ -92,7 +96,7 @@ const fetchProfileData = () => {
       else {
         userInfo.children[0].src = res.user.user_img;
         userInfo.children[1].textContent = res.user.name;
-        handleProfilePage(res.data);
+        handleProfilePage(res.data, res.user.id);
       }
     });
 };
