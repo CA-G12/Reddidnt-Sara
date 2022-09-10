@@ -461,6 +461,12 @@ button:hover {
     border-radius: 5px;
 }
 
+.all-comments .message{
+    font-size: 1.5rem;
+    color: #575959;
+    padding: 3rem 1rem;
+}
+
 .one-comment{
     margin-bottom: 1rem;
     border: solid #c6c9c9 1px;
