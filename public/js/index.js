@@ -121,7 +121,9 @@ const deleteComment = (e) => {
 const commentsSection = document.querySelector('.all-comments');
 
 const handleComments = (comments) => {
-  commentsSection.textContent = '';
+  if (comments.length) commentsSection.textContent = '';
+  else commentsSection.innerHTML = '<p class="message"> No one commented on this post 😭</p>';
+
   comments.forEach((e) => {
     const comment = document.createElement('div');
     const user = document.createElement('div');
@@ -229,7 +231,7 @@ const handleHomePage = (data, id) => {
 
     userImg.src = e.user_img;
     userName.textContent = e.name;
-    date.textContent = e.date.split('T')[0];
+    date.textContent = e.date.slice(0, 10);
     postTitle.textContent = e.title;
     postContent.textContent = e.post;
     likesNum.textContent = `${e.likes} Likes`;
