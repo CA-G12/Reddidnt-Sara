@@ -24,7 +24,8 @@ addCommentBtn.addEventListener('click', (e) => {
   })
     .then((res) => res.json())
     .then((res) =>{
-      textarea.value = ''
+      textarea.value = '';
+      addCommentBtn.disabled = !textarea.value;
       fetchComments(id);
     });
 });
@@ -47,7 +48,7 @@ const handlePost = (user) => {
   const comments = document.querySelector('.user-post .post .interactions .comments span')
 
   userName.textContent = user.name;
-  postDate.textContent = user.date.split('T')[0];
+  postDate.textContent = `posted: ${user.date.slice(0, 10)}`;
   userImg.src = user.user_img;
 
   postTitle.textContent = user.title;
@@ -202,7 +203,7 @@ const handleProfilePage = (data, id) => {
 
     userImg.src = e.user_img;
     userName.textContent = e.name;
-    date.textContent = e.date.slice(0, 10);
+    date.textContent = `posted: ${e.date.slice(0, 10)}`;
     postTitle.textContent = e.title;
     postContent.textContent = e.post;
     likesNum.textContent = `${e.likes} Likes`;

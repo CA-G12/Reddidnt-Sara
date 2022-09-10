@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -169,10 +170,11 @@ main .popular .list div > *{
     cursor: pointer;
 }
 
-.post .user{
+.post .user {
     height: 30px;
     display: flex;
     align-items: center;
+    padding: 2rem 0;
     margin-bottom: 2rem;
     width: 100%;
 }
@@ -206,6 +208,11 @@ main .popular .list div > *{
     margin-bottom: 1rem;
 }
 
+.post .content h2{
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
 .post .content p {
     font-size: 1.2rem;
     color: #636667;
@@ -214,6 +221,7 @@ main .popular .list div > *{
 
 .post .content img{
     width: 100%;
+    max-height: 500px;
 }
 
 .post .interactions{
@@ -224,6 +232,11 @@ main .popular .list div > *{
 
 .post .interactions div{
     margin-right: 1rem;
+}
+
+.post .interactions div:nth-child(2):hover {
+    color: var(--deep-blue);
+    transition: all 0.2s ease-in-out;
 }
 
 .post .interactions i {
