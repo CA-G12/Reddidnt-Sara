@@ -1,6 +1,6 @@
 const express = require('express');
 const {
-  addPost, deletePost, likePost, unlikePost, addComment, deleteComment, getComments
+  addPost, deletePost, likePost, unlikePost, addComment, deleteComment, getComments, updateData,
 } = require('../controllers');
 
 const router = express.Router();
@@ -13,5 +13,7 @@ router.delete('/post/delete-comment/:comId', deleteComment);
 router.get('/get-comments/:postId', getComments);
 
 router.get('/post/like-post/:postId', likePost);
+
+router.put('/post/update-data', updateData);
 
 module.exports = router;

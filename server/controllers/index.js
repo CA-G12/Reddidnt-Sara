@@ -6,7 +6,7 @@ const { addPost, deletePost } = require('./posts');
 
 const { signIn, signUp, signOut } = require('./register');
 
-const { homePage, profilePage } = require('./users');
+const { homePage, profilePage, updateData } = require('./users');
 
 module.exports = {
   addComment,
@@ -18,6 +18,7 @@ module.exports = {
   unlikePost,
   homePage,
   profilePage,
+  updateData,
   signIn,
   signUp,
   signOut,

@@ -6,7 +6,7 @@ const { addPostQuery, deletePostQuery, getOnePostQuery } = require('./posts');
 
 const { signInQuery, signUpQuery } = require('./register');
 
-const { homePageQuery, profilePageQuery } = require('./users');
+const { homePageQuery, profilePageQuery, updateDataQuery } = require('./users');
 
 module.exports = {
   addCommentQuery,
@@ -20,6 +20,7 @@ module.exports = {
   getOnePostQuery,
   homePageQuery,
   profilePageQuery,
+  updateDataQuery,
   signInQuery,
   signUpQuery,
 };
