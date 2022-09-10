@@ -3,7 +3,6 @@ const { addPostQuery } = require('../../database/queries');
 const addPost = (req, res, next) => {
   const { id } = req.data;
   const { title, post, img } = req.body;
-  console.log(req.body);
 
   addPostQuery({ title, post, img, id })
     .then(() => {

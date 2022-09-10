@@ -71,7 +71,7 @@ const closeComments = document.querySelector('.display-comments .close');
 const handlePost = (user) => {
   const userName = document.querySelector('.user-post .post .user h3');
   const postDate = document.querySelector('.user-post .post .user h4');
-  const userImg = document.querySelector('.user-post .post .user h4');
+  const userImg = document.querySelector('.user-post .post .user img');
 
   const postTitle = document.querySelector('.user-post .post .content h2');
   const postText = document.querySelector('.user-post .post .content p');

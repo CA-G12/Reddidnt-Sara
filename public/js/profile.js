@@ -37,7 +37,7 @@ const closeComments = document.querySelector('.display-comments .close');
 const handlePost = (user) => {
   const userName = document.querySelector('.user-post .post .user h3');
   const postDate = document.querySelector('.user-post .post .user h4');
-  const userImg = document.querySelector('.user-post .post .user h4');
+  const userImg = document.querySelector('.user-post .post .user img');
 
   const postTitle = document.querySelector('.user-post .post .content h2');
   const postText = document.querySelector('.user-post .post .content p');
@@ -152,12 +152,17 @@ const likePost = (e) => {
     });
 };
 
+let originalImg;
+let originalName;
+
 const handleProfilePage = (data, id) => {
   if (data.length) postsContainer.textContent = '';
-
   document.querySelector('.user img').src = data[0].user_img;
   document.querySelector('.user h3').textContent = data[0].name;
   document.querySelector('.user h4').textContent = `Joined on ${data[0].user_date.slice(0, 10)}`;
+
+  originalImg = data[0].user_img;
+  originalName = data[0].name;
 
   data.forEach((e) => {
     const post = document.createElement('div');
@@ -293,3 +298,49 @@ SignOutBtn.addEventListener('click', () => {
       window.location.reload();
     });
 });
+
+// updating user info
+const updateCont = document.querySelector('.update');
+const closeUpdate = document.querySelector('.update i');
+const openUpdate = document.querySelector('.user .update-btn');
+
+openUpdate.addEventListener('click', () => {
+  updateCont.style.display = 'flex';
+});
+
+closeUpdate.addEventListener('click', () => {
+  updateCont.style.display = 'none';
+});
+
+const nameInput = document.querySelector('.update .new-name');
+const imgInput = document.querySelector('.update .new-img');
+const saveChanges = document.querySelector('.update .save-change');
+
+nameInput.addEventListener('input', () =>{
+  saveChanges.disabled = !nameInput.value;
+});
+
+imgInput.addEventListener('input', () => {
+  saveChanges.disabled = !imgInput.value;
+});
+
+
+saveChanges.addEventListener('click', () => {
+  const data = {
+    name: nameInput.value || originalName,
+    user_img: imgInput.value || originalImg
+  };
+
+  fetch('/post/update-data', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      window.location.reload();
+    });
+});
+
