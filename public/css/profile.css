@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -195,6 +196,7 @@ main .add-posts .add > *{
     height: 30px;
     display: flex;
     align-items: center;
+    padding: 2rem 0;
     margin-bottom: 2rem;
     width: 100%;
 }
@@ -234,9 +236,14 @@ main .add-posts .add > *{
     margin-bottom: 2rem;
 }
 
+.post .content h2{
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
 .post .content img{
     width: 100%;
-    height: 500px;
+    max-height: 500px;
 }
 
 .post .interactions{
@@ -249,6 +256,11 @@ main .add-posts .add > *{
 
 .post .interactions div{
     margin-right: 1rem;
+}
+
+.post .interactions div:nth-child(2):hover {
+    color: var(--deep-blue);
+    transition: all 0.2s ease-in-out;
 }
 
 .post .interactions i {
