@@ -69,9 +69,10 @@ header .user-info:hover{
 }
 
 header .user-info img{
-    height: 2rem;
-    width: 2rem;
+    height: 2.5rem;
+    width: 2.5rem;
     margin-right: 0.5rem;
+    border-radius: 50%;
 }
 
 /* ===================== */
@@ -199,7 +200,10 @@ main .add-posts .add > *{
 }
 
 .post .user img{
-    height: 100%;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .post .user > * {
@@ -259,7 +263,7 @@ main .add-posts .add > *{
     margin-left: auto;
 }
 
-.post .interactions div:nth-child(3) button {
+button {
     width: auto;
     padding: 0.3rem 1rem;
     border-radius: 10px;
@@ -270,7 +274,7 @@ main .add-posts .add > *{
     font-size: 1.1rem;
 }
 
-.post .interactions div:nth-child(3) button:hover{
+button:hover{
     filter: brightness(1.2);
 }
 
@@ -287,16 +291,25 @@ main .user div{
     border-radius: 10px;
 }
 
+
+main .user div h3{
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #4e5152;
+}
+
 main .user div h4{
+    font-size: 1rem;
     margin-bottom: 3rem;
+    color: #4e5152;
 }
 
 main .user div img{
-    height: 100px;
-    width: 100px;
+    height: 170px;
+    width: 170px;
     border-radius: 50%;
     margin-bottom: 1rem;
-    border: solid var(--deep-blue) 1px;
+    object-fit: cover;
 }
 
 main .user div button {
@@ -468,6 +481,7 @@ main .user div button {
     width: 40px;
     height: 40px;
     margin-right: 0.5rem;
+    border-radius: 50%;
 }
 
 .one-comment p {
@@ -487,4 +501,63 @@ main .user div button {
     border: none;
     cursor: pointer;
     font-size: 1.1rem;
+}
+
+/* update info section */
+.update {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.update div{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 2rem;
+    position: relative;
+    width: 25%;
+    height: 35%;
+    border-radius: 5px;
+}
+
+.update div i{
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+    cursor: pointer;
+    color: var(--deep-blue);
+    font-size: 1.5rem;
+}
+
+.update div input{
+    padding: 0.6rem 1rem;
+    margin: 1rem 0;
+}
+
+.update div input input:focus::placeholder{
+    color: transparent;
+}
+
+.update div button{
+    margin-top: auto;
+    width: 40%;
+}
+
+.update div button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  pointer-events: none;
+}
+
+img {
+  object-fit: cover;
 }
